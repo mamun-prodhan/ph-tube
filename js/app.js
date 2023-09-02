@@ -29,7 +29,7 @@ const handleLoadCourse = async (categoryId) => {
       const div = document.createElement("div");
       div.innerHTML = `
     <div
-    class="card bg-base-100  shadow-xl"
+    class="card bg-base-100 h-96 p-4 shadow-xl"
   >
     <figure class="">
       <img
@@ -38,21 +38,21 @@ const handleLoadCourse = async (categoryId) => {
         class="rounded-xl h-52"
       />
     </figure>
-    <div class="flex flex-col items-center justify-center pt-3">
-    <div>
-      <img 
-      src="${course.authors[0].profile_picture}"
-      alt="author"
-      class="w-12 h-12 rounded-full"
-      >
-      <h3>${course.title}</h3>
-    </div>
-    <div>
-      <h3>${course.authors[0].profile_name}</h3>
-      ${course.authors[0].verified ? `<img src='../assets/verified.png'>` : ``}
-    </div>
-    <p> ${course.others.views} Views</p>
-    </div>
+<div class="flex flex-row gap-4">
+<div><img class="w-[40px] h-[40px] rounded-full mt-4" src="${
+        course.authors[0].profile_picture
+      }"></div>
+<div class="flex flex-col items-start pt-4">
+<div>
+  <h3 class="text-xl font-semibold">${course.title}</h3>
+</div>
+<div class="flex flex-row gap-4 items-center my-2">
+  <h3>${course.authors[0].profile_name}</h3>
+  ${course.authors[0].verified ? `<img src='../assets/verified.png'>` : ``}
+</div>
+<p> ${course.others.views} Views</p>
+</div>
+</div>
   </div>
     `;
       cardContainer.appendChild(div);
