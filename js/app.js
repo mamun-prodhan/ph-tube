@@ -19,16 +19,11 @@ const handleLoadCourse = async (categoryId) => {
     `https://openapi.programming-hero.com/api/videos/category/${categoryId}`
   );
   const data = await response.json();
-  // console.log(data.data);
+  console.log(data);
   const cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = "";
   data.data.forEach((course) => {
     const div = document.createElement("div");
-    console.log(course);
-    var verified = null;
-    if (course.authors[0].verified) {
-      verified = "../assets/verified.png";
-    }
     div.innerHTML = `
     <div
     class="card bg-base-100  shadow-xl"
