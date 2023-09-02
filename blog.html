@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - PH Tube</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="p-6 lg:p-0">
+    <header>
+      <!-- navbar -->
+      <nav class="container m-auto">
+        <div class="navbar bg-base-100">
+          <div class="navbar-start">
+            <img src="./assets/Logo.png" alt="logo" />
+          </div>
+          <div class="navbar-end">
+            <a href="./index.html">
+              <button
+                class="text-sm md:text-lg bg-[#FF1F3D] py-2 px-4 rounded-md text-[#FFFFFF] font-semibold"
+              >
+                BACK TO HOME
+              </button>
+            </a>
+          </div>
+        </div>
+        <hr />
+      </nav>
+    </header>
+    <main class="my-12">
+      <section class="container m-auto">
+        <div>
+          <h2 class="text-3xl font-semibold mb-8">
+            Discuss the scope of var, let and const?
+          </h2>
+          <p class="text-xl font-medium mb-4">Var:</p>
+          <ul class="list-disc">
+            <li>The scope of a var variable is functional scope.</li>
+            <li>It can be updated and re-declared into the scope.</li>
+            <li>It can be declared without initialization.</li>
+            <li>
+              It can be accessed without initialization as its default value is
+              “undefined”.
+            </li>
+            <li>Hoisting done, with initializing as default value</li>
+          </ul>
+          <!--  -->
+          <p class="text-xl font-medium my-4">Let:</p>
+          <ul class="list-disc">
+            <li>The scope of a let variable is block scope.</li>
+            <li>It can be updated but cannot be re-declared into the scope.</li>
+            <li>It can be declared without initialization.</li>
+            <li>
+              It cannot be accessed without initialization otherwise it will
+              give referenceError.
+            </li>
+            <li>
+              Hoisting is done, but not initialized this is the reason for the
+              error when we access the let variable before
+              declaration/initialization
+            </li>
+          </ul>
+          <!--  -->
+          <p class="text-xl font-medium my-4">Const:</p>
+          <ul class="list-disc">
+            <li>The scope of a const variable is block scope</li>
+            <li>It cannot be updated or re-declared into the scope.</li>
+            <li>It cannot be declared without initialization.</li>
+            <li>
+              It cannot be accessed without initialization, as it cannot be
+              declared without initialization.
+            </li>
+            <li>
+              Hoisting is done, but not initialized (this is the reason for the
+              error when we access the const variable before
+              declaration/initialization
+            </li>
+          </ul>
+        </div>
+        <div class="mt-8">
+          <h2 class="text-3xl font-semibold mb-8">
+            Tell us the usecase of null and undefined?
+          </h2>
+          <p>
+            <span class="text-xl font-medium mb-4">Null: </span>Null is an
+            assignment value. It can be assigned to a variable as a
+            representation of no value. It is a Primitive value in Javascript
+          </p>
+          <p class="mt-4">
+            <span class="text-xl font-medium mb-4">Undefined: </span>Null is an
+            assignment value. It can be assigned to a variable as a
+            representation of no value. It is a Primitive value in Javascript
+          </p>
+        </div>
+        <div class="mt-8">
+          <h2 class="text-3xl font-semibold mb-8">
+            What do you mean by REST API?
+          </h2>
+          <p>
+            <span class="text-xl font-medium mb-4">REST API: </span
+            >Representational State Transfer (REST) is an architectural style
+            that defines a set of constraints to be used for creating web
+            services. REST API is a way of accessing web services in a simple
+            and flexible way without having any processing.REST technology is
+            generally preferred to the more robust Simple Object Access Protocol
+            (SOAP) technology because REST uses less bandwidth, simple and
+            flexible making it more suitable for internet usage. Its used to
+            fetch or give some information from a web service. All communication
+            done via REST API uses only HTTP request.A request is sent from
+            client to server in the form of a web URL as HTTP GET or POST or PUT
+            or DELETE request. After that, a response comes back from the server
+            in the form of a resource which can be anything like HTML, XML,
+            Image, or JSON. But now JSON is the most popular format being used
+            in Web Services. In HTTP there are five methods that are commonly
+            used in a REST-based Architecture i.e., POST, GET, PUT, PATCH, and
+            DELETE. These correspond to create, read, update, and delete (or
+            CRUD) operations respectively. There are other methods which are
+            less frequently used like OPTIONS and HEAD.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
