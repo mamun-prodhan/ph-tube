@@ -21,10 +21,13 @@ const handleLoadCourse = async (categoryId) => {
   const data = await response.json();
   console.log(data);
   const cardContainer = document.getElementById("card-container");
+  const emptyCardContainer = document.getElementById("empty-card");
   cardContainer.innerHTML = "";
-  data.data.forEach((course) => {
-    const div = document.createElement("div");
-    div.innerHTML = `
+  emptyCardContainer.innerHTML = "";
+  if (data.status) {
+    data.data.forEach((course) => {
+      const div = document.createElement("div");
+      div.innerHTML = `
     <div
     class="card bg-base-100  shadow-xl"
   >
@@ -52,8 +55,16 @@ const handleLoadCourse = async (categoryId) => {
     </div>
   </div>
     `;
-    cardContainer.appendChild(div);
-  });
+      cardContainer.appendChild(div);
+    });
+  } else {
+    const div = document.createElement("div");
+    div.innerHTML = `
+      <img class="mx-auto mt-12" src="../assets/Icon.png">
+      <h2 class="text-3xl font-semibold text-center my-6">Oops!! Sorry, There is no content here</h2>
+    `;
+    emptyCardContainer.appendChild(div);
+  }
 };
 
 handleCategory();
