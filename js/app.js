@@ -19,13 +19,16 @@ const handleLoadCourse = async (categoryId) => {
     `https://openapi.programming-hero.com/api/videos/category/${categoryId}`
   );
   const data = await response.json();
-  console.log(data);
   const cardContainer = document.getElementById("card-container");
   const emptyCardContainer = document.getElementById("empty-card");
   cardContainer.innerHTML = "";
   emptyCardContainer.innerHTML = "";
   if (data.status) {
     data.data.forEach((course) => {
+      const date = parseInt(course.others.posted_date);
+      const hours = Math.round(date / 3600);
+      const minutes = Math.round((date % 3600) / 60);
+
       const div = document.createElement("div");
       div.innerHTML = `
     <div
@@ -38,7 +41,11 @@ const handleLoadCourse = async (categoryId) => {
         class="rounded-xl h-52"
       />
     </figure>
-    <span class="absolute bottom-[44%] right-[15%] bg-[#171717] text-sm text-[#FFFFFF] p-1 rounded-md">3hrs 56min ago</span>
+    <span>${
+      course.others.posted_date
+        ? `<span  class="absolute bottom-[44%] right-[15%] bg-[#171717] text-sm text-[#FFFFFF] p-1 rounded-md">${hours}hrs ${minutes}min ago</span>`
+        : ``
+    }</span>
 <div class="flex flex-row gap-4">
 <div><img class="w-[40px] h-[40px] rounded-full mt-4" src="${
         course.authors[0].profile_picture
