@@ -31,13 +31,14 @@ const handleLoadCourse = async (categoryId) => {
     <div
     class="card bg-base-100 h-96 p-4 shadow-xl"
   >
-    <figure class="">
+    <figure class="relative">
       <img
         src="${course.thumbnail}"
         alt="product"
         class="rounded-xl h-52"
       />
     </figure>
+    <span class="absolute bottom-[44%] right-[15%] bg-[#171717] text-sm text-[#FFFFFF] p-1 rounded-md">3hrs 56min ago</span>
 <div class="flex flex-row gap-4">
 <div><img class="w-[40px] h-[40px] rounded-full mt-4" src="${
         course.authors[0].profile_picture
